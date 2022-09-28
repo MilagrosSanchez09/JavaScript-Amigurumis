@@ -7,7 +7,7 @@ const Muñecos =
         price: '5000',
         size: '25',
         description: 'Princesa Anna, de la película "Frozen".',
-        image: './assets/img/anna.jpg', 
+        image: 'assets/img/anna.jpg', 
     },
     {
         id: 102,
@@ -15,7 +15,7 @@ const Muñecos =
         price: '5000',
         size: '25',
         description: 'Princesa Ariel, de la película "The Little Marmaid".',
-        image: './assets/img/ariel.jpg',
+        image: 'assets/img/ariel.jpg',
     },
     {
         id: 103,
@@ -23,7 +23,7 @@ const Muñecos =
         price: '5000',
         size: '25',
         description: 'Princesa Aurora, de la película "Sleeping Beauty".',
-        image: './assets/img/aurora.jpg',
+        image: 'assets/img/aurora.jpg',
     },
     {
         id: 104,
@@ -31,7 +31,7 @@ const Muñecos =
         price: '5000',
         size: '25',
         description: 'Princesa Belle, de la película "Beauty and the Beast".',
-        image: './assets/img/belle.jpg',
+        image: 'assets/img/belle.jpg',
     },
     {
         id: 105,
@@ -39,7 +39,7 @@ const Muñecos =
         price: '5000',
         size: '25',
         description: 'Princesa Moana, de la película "Moana".',
-        image: './assets/img/moana.jpg',
+        image: 'assets/img/moana.jpg',
     },
     {
         id: 106,
@@ -47,7 +47,7 @@ const Muñecos =
         price: '5000',
         size: '25',
         description: 'Princesa Mulan, de la película "Mulan".',
-        image: './assets/img/mulan.jpg',
+        image: 'assets/img/mulan.jpg',
     },
     {
         id: 107,
@@ -55,7 +55,7 @@ const Muñecos =
         price: '5000',
         size: '25',
         description: 'Princesa Pocahontas, de la película "Pocahontas".',
-        image: './assets/img/pocahontas.jpg',
+        image: 'assets/img/pocahontas.jpg',
     },
     {
         id: 108,
@@ -63,7 +63,7 @@ const Muñecos =
         price: '5000',
         size: '25',
         description: 'Princesa Rapunzel, de la película "Tangled".',
-        image: './assets/img/rapunzel.jpg',
+        image: 'assets/img/rapunzel.jpg',
     },
     {
         id: 109,
@@ -71,7 +71,7 @@ const Muñecos =
         price: '5000',
         size: '25',
         description: 'Princesa Snow White, de la película "Snow White and the Seven Dwarfs".',
-        image: './assets/img/snowwhite.jpg',
+        image: 'assets/img/snowwhite.jpg',
     },
     {
         id: 110,
@@ -79,7 +79,7 @@ const Muñecos =
         price: '5000',
         size: '25',
         description: 'Princesa Jasmine, de la película "Aladdin".',
-        image: './assets/img/jasmine.jpg',
+        image: 'assets/img/jasmine.jpg',
     },
 ]
 
