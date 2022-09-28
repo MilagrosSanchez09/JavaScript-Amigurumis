@@ -146,7 +146,7 @@ const loadEvents = () =>
                     cart.push(newProduct);
                 }
             }
-
+            localStorage.setItem('cart', JSON.stringify(cart));
             updateCart(cart);
         })
     }
@@ -174,3 +174,13 @@ const loadProducts = (Muñecos) =>
 }
 
 loadProducts(Muñecos);
+
+const recoveryLocalStorage = () => {
+    let recoveryCart = JSON.parse(localStorage.getItem("cart"));
+    recoveryCart.forEach((Muñecos) => {
+        cart.push(Muñecos);
+    });
+    updateCart(cart);
+};
+
+recoveryLocalStorage();
