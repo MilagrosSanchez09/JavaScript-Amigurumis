@@ -146,11 +146,31 @@ const loadEvents = () =>
                     cart.push(newProduct);
                 }
             }
+
+            // Agrego una alerta al hacer click sobre el botón Agregar al carrito.
+            swalSuccesCart = Swal.mixin({
+                customClass: {
+                  confirmButton: 'btn btn-success',
+                  cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+              })
+              
+              swalSuccesCart.fire({
+                position: 'top-center',
+                icon: 'success',
+                title: 'Se ha guardado con éxito en su carrito.',
+                showConfirmButton: false,
+                timer: 15000
+                }
+              )
+            
             localStorage.setItem('cart', JSON.stringify(cart));
             updateCart(cart);
         })
     }
 }
+
 
 //Creo las cards
 
@@ -184,3 +204,4 @@ const recoveryLocalStorage = () => {
 };
 
 recoveryLocalStorage();
+
