@@ -1,89 +1,43 @@
-const Muñecos = 
-[
-    //Productos
-    {
-        id: 101,
-        name: 'Anna',
-        price: '5000',
-        size: '25',
-        description: 'Princesa Anna, de la película "Frozen".',
-        image: 'assets/img/anna.jpg', 
-    },
-    {
-        id: 102,
-        name: 'Ariel',
-        price: '5000',
-        size: '25',
-        description: 'Princesa Ariel, de la película "The Little Marmaid".',
-        image: 'assets/img/ariel.jpg',
-    },
-    {
-        id: 103,
-        name: 'Aurora',
-        price: '5000',
-        size: '25',
-        description: 'Princesa Aurora, de la película "Sleeping Beauty".',
-        image: 'assets/img/aurora.jpg',
-    },
-    {
-        id: 104,
-        name: 'Belle',
-        price: '5000',
-        size: '25',
-        description: 'Princesa Belle, de la película "Beauty and the Beast".',
-        image: 'assets/img/belle.jpg',
-    },
-    {
-        id: 105,
-        name: 'Moana',
-        price: '5000',
-        size: '25',
-        description: 'Princesa Moana, de la película "Moana".',
-        image: 'assets/img/moana.jpg',
-    },
-    {
-        id: 106,
-        name: 'Mulan',
-        price: '5000',
-        size: '25',
-        description: 'Princesa Mulan, de la película "Mulan".',
-        image: 'assets/img/mulan.jpg',
-    },
-    {
-        id: 107,
-        name: 'Pocahontas',
-        price: '5000',
-        size: '25',
-        description: 'Princesa Pocahontas, de la película "Pocahontas".',
-        image: 'assets/img/pocahontas.jpg',
-    },
-    {
-        id: 108,
-        name: 'Rapunzel',
-        price: '5000',
-        size: '25',
-        description: 'Princesa Rapunzel, de la película "Tangled".',
-        image: 'assets/img/rapunzel.jpg',
-    },
-    {
-        id: 109,
-        name: 'Snow White',
-        price: '5000',
-        size: '25',
-        description: 'Princesa Snow White, de la película "Snow White and the Seven Dwarfs".',
-        image: 'assets/img/snowwhite.jpg',
-    },
-    {
-        id: 110,
-        name: 'Jasmine',
-        price: '5000',
-        size: '25',
-        description: 'Princesa Jasmine, de la película "Aladdin".',
-        image: 'assets/img/jasmine.jpg',
-    },
-]
 
+const Muñecos = [];
 const cart = [];
+
+//CREO LAS CARDS
+
+const loadProducts = (Muñecos) =>
+{
+    let container = document.querySelector('#container');
+    for (const product of Muñecos)
+    {
+        let div = document.createElement('div');
+        div.setAttribute('class', 'card');
+        div.innerHTML = `
+            <img src="${product.image}" alt="${product.description}">
+            <h3>$${product.price}</h3>
+            <h4>${product.name}</h4>
+            <h4>${product.size} cm</h4>
+            <button class="button" id="${product.id}">Agregar al carrito</button>
+        `;
+        container.appendChild(div);
+    }
+    loadEvents();
+}
+
+//TRAIGO EL ARRAY DE PRODUCTOS
+const getData = async () =>
+{
+    try{
+        const response = await fetch('/data.json');
+        const data = await response.json();
+        loadProducts(data);
+        Muñecos.push(...data);
+    }
+    catch(e)
+    {
+        console.log(e);
+    }
+}
+getData()
 
 const updateCart = (cart) =>
 {
@@ -112,8 +66,8 @@ const updateCart = (cart) =>
     }
 
     cartContainer.appendChild(div);
+    loadEvents();
 }
-
 
 const loadEvents = () =>
 {
@@ -170,30 +124,6 @@ const loadEvents = () =>
         })
     }
 }
-
-
-//Creo las cards
-
-const loadProducts = (Muñecos) =>
-{
-    let container = document.querySelector('#container');
-    for (const product of Muñecos)
-    {
-        let div = document.createElement('div');
-        div.setAttribute('class', 'card');
-        div.innerHTML = `
-            <img src="${product.image}" alt="${product.description}">
-            <h3>$${product.price}</h3>
-            <h4>${product.name}</h4>
-            <h4>${product.size} cm</h4>
-            <button class="button" id="${product.id}">Agregar al carrito</button>
-        `;
-        container.appendChild(div);
-    }
-    loadEvents();
-}
-
-loadProducts(Muñecos);
 
 const recoveryLocalStorage = () => {
     let recoveryCart = JSON.parse(localStorage.getItem("cart"));

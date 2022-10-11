@@ -28,7 +28,10 @@ section{
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding: 15em;
+}
+
+#container{
+    padding-top: 15rem;
 }
 
 #cart{
